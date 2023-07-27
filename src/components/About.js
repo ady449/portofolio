@@ -48,18 +48,17 @@ const About = () => {
               About
             </p>
           </div>
-          <div></div>
+        </div>
+        <div className="max-w-[800px] pb-8 pl-4">
+          <p>
+            He graduated with a bachelor's degree in computer science from the
+            West University of Timisoara. Is a passionate about building
+            software that improves the lives of those around he.
+          </p>
         </div>
         <div className="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
-          <div className="sm:text-right text-4xl font-bold">
-            <p>Hi. I'm Adrian</p>
-          </div>
-          <div>
-            <p>
-              He graduated with a bachelor's degree in computer science from the
-              West University of Timisoara. Is a passionate about building
-              software that improves the lives of those around he.
-            </p>
+          <div className="text-4xl font-bold bg-slate-100">
+            <p className="text-2xl font-light align-center">Work experience</p>
           </div>
           {projects.map((project, ind) => {
             return (

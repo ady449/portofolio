@@ -4,10 +4,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-scroll";
 
 const navigation = [
-  { name: "Home", href: "home", current: true },
-  { name: "About me", href: "about", current: false },
-  { name: "Projects", href: "projects", current: false },
-  { name: "History", href: "hist", current: false },
+  { name: "Home", href: "home" },
+  { name: "About me", href: "about" },
+  { name: "Projects", href: "projects" },
+  { name: "Contact", href: "contact" },
 ];
 
 function classNames(...classes) {
@@ -77,17 +77,27 @@ export default function Navbar() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="Link"
-                  href={item.href}
+                  as="a"
                   className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "text-gray-300 hover:bg-gray-700 hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >
-                  {item.name}
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    smooth={true}
+                    duration={500}
+                    onClick={setClick}
+                    className={classNames(
+                      "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      "rounded-md px-3 py-2 text-sm font-medium"
+                    )}
+                    aria-current={item.current ? "page" : undefined}
+                  >
+                    {item.name}
+                  </Link>
                 </Disclosure.Button>
               ))}
             </div>
