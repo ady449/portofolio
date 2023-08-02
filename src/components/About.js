@@ -1,10 +1,13 @@
 import React from "react";
 import Card from "../components/3dCard/Card.js";
+import AOS from 'aos';
 const About = () => {
+  AOS.init()
   const projects = [
     {
       title: "Junior QA Software",
       desc: "QA in insurance project",
+      comp:"Endava",
       tags: [
         {
           name: "AWS",
@@ -23,6 +26,7 @@ const About = () => {
     {
       title: "QA Software",
       desc: "Promoted to a mid position since 1 January 2023. He changed the teams repeatedly, completing the objectives.",
+      comp:"Endava",
       tags: [
         {
           name: "AWS",
@@ -56,21 +60,26 @@ const About = () => {
             software that improves the lives of those around he.
           </p>
         </div>
-        <div className="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
-          <div className="text-4xl font-bold bg-slate-100">
-            <p className="text-2xl font-light align-center">Work experience</p>
+        <div className="max-w-[800px] w-full grid sm:grid-cols-2 gap-8 px-4">
+          <div className="flex-basis text-4xl font-bold">
+            <p className="text-2xl font-light text-center sm:pt-10 ">Work experience</p>
           </div>
           {projects.map((project, ind) => {
             return (
               <div
                 key={ind}
-                data-aos={"zoom-in-up"}
-                data-aos-offset="-5"
+                data-aos={"fade-up"}
+                data-aos-offset="100"
                 data-aos-delay={ind % 2 === 0 ? "0" : "700"}
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center"
                 data-aos-duration="2000"
               >
                 <Card
                   title={project.title}
+                  comp={project.comp}
                   desc={project.desc}
                   tags={project.tags}
                 />

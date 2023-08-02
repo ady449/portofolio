@@ -1,5 +1,5 @@
 import Tilt from "react-parallax-tilt";
-export default function work({ title, desc, tags, link, code, img }) {
+export default function work({ title, desc, tags, comp }) {
   return (
     <Tilt
       options={{
@@ -13,6 +13,7 @@ export default function work({ title, desc, tags, link, code, img }) {
         <div>
           <div className="mt-5">
             <h3 className="text-white font-bold text-[24px]">{title}</h3>
+            <h4 className="mt-2 text-bold text-[16px]">{comp}</h4>
             <p className="mt-2 text-secondary text-[14px]">{desc}</p>
           </div>
         </div>
