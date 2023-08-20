@@ -1,15 +1,10 @@
-import Tilt from "react-parallax-tilt";
-export default function work({ title, desc, tags, comp }) {
+import * as React from 'react';
+
+
+export default function SimpleCard({color, title, comp,tags, desc}) {
+  
   return (
-    <Tilt
-      options={{
-        max: 45,
-        scale: 1,
-        speed: 450,
-      }}
-      className="bg-[#0b212d]  rounded-2xl max-w-[362px]  h-full bg-gradient-to-r from-green-700 to-pink-800 p-[1px]"
-    >
-      <div className="bg-[#0b212d] w-full h-full rounded-2xl p-4 flex flex-col justify-between">
+    <div className={`${color} w-full h-full rounded-2xl p-4 flex flex-col justify-between`}>
         <div>
           <div className="mt-5">
             <h3 className="text-white font-bold text-[24px]">{title}</h3>
@@ -21,13 +16,12 @@ export default function work({ title, desc, tags, comp }) {
           {tags.map((tag) => (
             <p
               key={tag.name}
-              className={`font-medium text-${tag.color} py-0.5 px-1 bg-slate-800 rounded-sm shadow`}
+              className={`font-medium ${tag.color} py-0.5 px-1 bg-slate-500 rounded-md shadow-lg`}
             >
               {tag.name}
             </p>
           ))}
         </div>
       </div>
-    </Tilt>
   );
 }
