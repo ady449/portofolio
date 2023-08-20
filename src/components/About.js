@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../components/3dCard/Card.js";
+import Card from "../components/Card.js";
 import AOS from "aos";
 import { FaReact, FaJava } from "react-icons/fa";
 import { DiCss3 } from "react-icons/di";
