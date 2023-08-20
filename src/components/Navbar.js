@@ -1,7 +1,9 @@
-import { Fragment, useState } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {  useState } from "react";
+import { Disclosure, Menu } from "@headlessui/react";
+import { Bars3Icon,  XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-scroll";
+
+
 
 const navigation = [
   { name: "Home", href: "home" },
@@ -21,7 +23,7 @@ export default function Navbar() {
   };
   const closeMenu = () => setClick(false);
   return (
-    <Disclosure as="nav" className="fixed w-full bg-gray-800">
+    <Disclosure as="nav" className="fixed w-full bg-gray-800 overflow-hidden z-10">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

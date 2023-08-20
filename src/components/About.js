@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../components/3dCard/Card.js";
+import Card from "./3dCard/TiltCard.js";
 import AOS from 'aos';
 const About = () => {
   AOS.init()
@@ -44,7 +44,7 @@ const About = () => {
     },
   ];
   return (
-    <div name="about" className="w-full h-screen bg-[#0a192f] text-gray-300">
+    <div name="about" className="w-full h-screen pt-10 bg-[#0a192f] text-gray-300">
       <div className="flex flex-col justify-center items-center w-full h-full">
         <div className="max-w-[1000px] w-full grid grid-cols-2 gap-8">
           <div className="sm:text-right pb-8 pl-4">
@@ -78,6 +78,7 @@ const About = () => {
                 data-aos-duration="2000"
               >
                 <Card
+                  color={"bg-[#0b212d]"}
                   title={project.title}
                   comp={project.comp}
                   desc={project.desc}
