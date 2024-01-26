@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../components/Card.js";
+import Card from "./3dCard/TiltCard.js";
 import AOS from "aos";
 import { FaReact, FaJava } from "react-icons/fa";
 import { DiCss3 } from "react-icons/di";
@@ -49,7 +49,10 @@ const About = () => {
 		},
 	];
 	return (
-		<div name="about" className="w-full h-screen bg-[#0a192f] text-gray-300">
+		<div
+			name="about"
+			className="w-full h-screen pt-28 bg-[#0a192f] text-gray-300"
+		>
 			<div className="flex flex-col justify-center items-center w-full h-full">
 				<div className="max-w-[1000px] w-full grid grid-cols-2 gap-8">
 					<div className="sm:text-right pb-8 pl-4">
@@ -85,6 +88,7 @@ const About = () => {
 								data-aos-duration="2000"
 							>
 								<Card
+									color={"bg-[#0b212d]"}
 									title={project.title}
 									comp={project.comp}
 									desc={project.desc}

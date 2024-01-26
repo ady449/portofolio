@@ -1,48 +1,74 @@
 import React from "react";
-import Box from '@mui/material/Box';
-import Switch from '@mui/material/Switch';
-import Slide from '@mui/material/Slide';
+import Box from "@mui/material/Box";
+import Slide from "@mui/material/Slide";
 import { DevicePhoneMobileIcon } from "@heroicons/react/20/solid";
-import FormControlLabel from '@mui/material/FormControlLabel';
+import { EnvelopeIcon } from "@heroicons/react/20/solid";
 
 const Contact = () => {
+	const [checked, setChecked] = React.useState({ mobile: false, mail: false });
+	const containerRef = React.useRef(null);
 
-  const [checked, setChecked] = React.useState(false);
-  const containerRef = React.useRef(null);
+	const handleChange = (type) => {
+		setChecked((prevChecked) => ({
+			...prevChecked,
+			[type]: !prevChecked[type], // Toggle the value
+		}));
+	};
 
-  const handleChange = () => {
-    setChecked((prev) => !prev);
-  };
+	return (
+		<div
+			name="contact"
+			className="w-full h-screen pt-20 bg-[#0a192f] flex justify-center items-center "
+		>
+			{/* bg-[#0a192f] */}
+			<div className="flex flex-col justify-center items-center w-full h-full">
+				<div className="max-w-[1000px] w-full grid grid-cols-2 gap-8">
+					<div className="sm:text-right pb-8 pl-4 ">
+						<p className="text-4xl font-bold inline text-gray-300 border-b-4 border-pink-600">
+							Contact
+						</p>
+					</div>
+				</div>
+				<Box
+					sx={{
+						height: "100%",
+						width: "50%",
+						padding: 2,
+						borderRadius: 1,
+						display: "flex",
+						overflow: "hidden",
 
-  return (
-    <div
-      name="contact"
-      className="w-full h-screen bg-[#0a192f] flex justify-center items-center p-4"
-    >
-      <Box sx={{
-        height: 180,
-        width: 240,
-        display: 'flex',
-        padding: 2,
-        borderRadius: 1,
-        
-        overflow: 'hidden',
-      }}>
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					{/* <Box sx={{ width: 200 }} ref={containerRef}> */}
+					<button name="mobile" onClick={() => handleChange("mobile")}>
+						<DevicePhoneMobileIcon className="h-10 w-10 text-gray-100" />
+						<Slide
+							direction="up"
+							in={checked.mobile}
+							container={containerRef.current}
+						>
+							<h1>+40751392453</h1>
+						</Slide>
+					</button>
+					<button name="mail" onClick={() => handleChange("mail")}>
+						<EnvelopeIcon className="h-10 w-10 text-gray-100" />
 
-        <Box sx={{ width: 200 }} ref={containerRef}>
-          <FormControlLabel
-            control={<Switch checked={checked} onChange={handleChange} />}
-            label="Show from target"
-          />
-          <Slide direction="up" in={checked} container={containerRef.current}>
-
-            <DevicePhoneMobileIcon className="h-6 w-6 text-gray-100" />
-
-          </Slide>
-        </Box>
-      </Box>
-    </div>
-  );
+						<Slide
+							direction="up"
+							in={checked.mail}
+							container={containerRef.current}
+						>
+							<h1>valentinadi36@yahoo.com</h1>
+						</Slide>
+					</button>
+					{/* </Box> */}
+				</Box>
+			</div>
+		</div>
+	);
 };
 
 export default Contact;
