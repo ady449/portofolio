@@ -1,43 +1,10 @@
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
-.name {
-  font-family: Roboto_slab, "Times New Roman", Times, serif;
-  font-weight: 500;
-  font-size: larger;
-}
-
-.head {
-  font-family: Roboto_slab, "Times New Roman", Times, serif;
-}
-
-.nav {
-  font-family: Gilda_display, Arial, serif;
-  font-weight: 700;
-}
-
-.para {
-  font-family: Gilda_display, Arial, serif;
-  /* font-weight: 700; */
-}
-
-.back {
-  background-color: #0f0f0f;
-}
-
-.cursor {
-  position: fixed;
-  width: 23px;
-  height: 23px;
-  border-radius: 50%;
-  background: white;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  mix-blend-mode: difference;
-}
+/* hsla(242, 74%, 61%, 0.8) */
