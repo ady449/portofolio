@@ -4,7 +4,7 @@ import useInterval from "@use-it/interval";
 
 // Constants
 const VALID_CHARS = `abcdefghijklmnopqrstuvwxyz0123456789$+-*/=%"'#&_(),.;:?!\\|{}<>[]^~`;
-const STREAM_MUTATION_ODDS = 0.02;
+const STREAM_MUTATION_ODDS = 0.01;
 
 const MIN_STREAM_SIZE = 15;
 const MAX_STREAM_SIZE = 50;
@@ -73,8 +73,8 @@ const RainStream = (props) => {
 		} else {
 			setTopPadding(topPadding + 44);
 		}
-		// setStream(stream => [...stream.slice(1, stream.length), getRandChar()]);
-		setStream(getMutatedStream);
+		setStream((stream) => [...stream.slice(1, stream.length), getRandChar()]);
+		// setStream(getMutatedStream);
 	}, intervalDelay);
 
 	return (
@@ -130,13 +130,16 @@ const MatrixRain = (props) => {
 	return (
 		<div
 			style={{
-				background: "black",
+				background: "#0a192f",
+
+				backgroundSize: "cover",
 				position: "fixed",
 				top: 0,
 				left: 0,
 				bottom: 0,
 				right: 0,
-				overflow: "ignore",
+				overflow: "hidden",
+				zIndex: -1,
 				display: "flex",
 				flexDirection: "row",
 				justifyContent: "center",
